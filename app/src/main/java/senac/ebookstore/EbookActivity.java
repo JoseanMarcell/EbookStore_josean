@@ -46,7 +46,7 @@ public class EbookActivity extends AppCompatActivity {
                 Ebook ebook = new Ebook(isbn, null, titulo, autor, sinopse, tipo,null);
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("ebook-" + ebook.getIsbn());
+                DatabaseReference myRef = database.getReference("ebook-" + ebook.getTipo() + "/" + ebook.getIsbn());
 
                 myRef.setValue(ebook);
 
